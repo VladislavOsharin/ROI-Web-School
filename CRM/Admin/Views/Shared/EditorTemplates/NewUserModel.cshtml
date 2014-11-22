@@ -1,0 +1,14 @@
+﻿﻿@model Crm.Admin.Models.NewUserModel
+<fieldset>
+    <legend>Login Info</legend>
+    @Html.LabelFor(model => model.Login) @Html.EditorFor(model => model.Login)
+    <fieldset>
+        <legend>@Html.LabelFor(model => model.Password)</legend>
+        @Html.LabelFor(model => model.Password1) @Html.EditorFor(model => model.Password2)
+    </fieldset>
+</fieldset>
+<fieldset>
+    <legend>Name</legend>
+    @Html.LabelFor(model => model.FirstName) @Html.EditorFor(model => model.FirstName)
+    @Html.LabelFor(model => model.LastName) @Html.EditorFor(model => model.LastName)
+</fieldset>

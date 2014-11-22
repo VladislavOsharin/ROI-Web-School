@@ -1,0 +1,30 @@
+﻿@using Crm.Admin.Models
+@model UserListModel
+<table>
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Users.Element().Login)</th>
+            <th>@Html.DisplayNameFor(model => model.Users.Element().FirstName)</th>
+            <th>@Html.DisplayNameFor(model => model.Users.Element().LastName)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            var deleteIdField = Html.NameFor(model => model.DeleteId);
+            var editIdField = Html.NameFor(model => model.EditId);
+        }
+        @foreach (var user in Model.Users)
+        {
+            <tr>
+                <td>@user.Login</td>
+                <td>@user.FirstName</td>
+                <td>@user.LastName</td>
+                <td>
+                    <button type="submit" name="@editIdField" value="@user.Id">Edit</button>
+                    <button type="submit" name="@deleteIdField" value="@user.Id">Delete</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

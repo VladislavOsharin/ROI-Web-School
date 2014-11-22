@@ -1,0 +1,17 @@
+﻿﻿@model Crm.Admin.Models.LoginModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <form action="@Request.Url.PathAndQuery" method="POST">
+        @Html.EditorForModel()
+        <div class="button-pane"><button type="submit">Login</button></div>
+        <div class="message-pane">@Html.ValidationMessage(string.Empty)</div>
+    </form>
+</body>
+</html>

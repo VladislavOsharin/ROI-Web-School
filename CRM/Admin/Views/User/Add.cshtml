@@ -1,0 +1,12 @@
+﻿﻿@model Crm.Admin.Models.NewUserModel
+@{
+    ViewBag.Title = "Add New User";
+}
+<h2>@ViewBag.Title</h2>
+@using (Html.BeginForm("Add", "Home"))
+{
+    <div>
+        @Html.EditorForModel()
+    </div>
+    <button type="submit">Create</button>
+}
